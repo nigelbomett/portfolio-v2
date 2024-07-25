@@ -1,38 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import '@mantine/core/styles.css';
-import {MantineProvider} from '@mantine/core';
+import { Flex, Container, Title, Button, Text, Grid, Table, Group } from '@mantine/core';
+import { MdEmail } from "react-icons/md";
+import { FaGithub, FaLinkedin, FaDev } from "react-icons/fa";
+
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const containerProps = {
+    bg: 'var(--mantime-color-blue-light)',
+    h:50,
+    mt:'md'
+  };
 
   return (
-    <MantineProvider>
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-    </MantineProvider>
+    <Flex
+      gap="md"
+      justify="flex-start"
+      align="flex-start"
+      direction="column"
+      wrap="wrap"
+      ml="150"
+      mt="20"
+      
+    >
+      <Grid align='flex-start' justify='flex-start'>
+        <Grid.Col span={2}><Title order={2} ta='start'>Nigel Bomett</Title></Grid.Col>
+        <Grid.Col span={5}><Text size="md" ta='justify'ml={30} mt={18} fw={600}>I'm a software developer who wants to make the world a better place.</Text></Grid.Col>
+      </Grid>
+      <Group mt={20}>
+        <MdEmail size={30} />
+        <FaGithub size={30} />
+        <FaLinkedin size={30}/>
+        <FaDev size={30} />
+
+      </Group>
+    </Flex>
+
+    
+   
   )
 }
 
